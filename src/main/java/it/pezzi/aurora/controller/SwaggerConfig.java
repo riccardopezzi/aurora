@@ -1,4 +1,4 @@
-package controller;
+package it.pezzi.aurora.controller;
 
 import com.google.common.base.Predicates;
 import org.springframework.context.annotation.Bean;
