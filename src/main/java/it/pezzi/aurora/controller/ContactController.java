@@ -16,9 +16,9 @@ public class ContactController {
     @Autowired
     private ContactService contactService;
 
-    @ApiOperation(value = "Search contact by code")
+    @ApiOperation(value = "Search contact by id")
     @RequestMapping(method = RequestMethod.GET)
-    public Contact getContact(@RequestParam(value="code") String code) throws NotFoundException {
-            return contactService.findByCode(code);
+    public Contact getContact(@RequestParam(value="contactId") Long contactId) throws NotFoundException {
+            return contactService.findByContactId(contactId);
     }
 }

@@ -13,17 +13,21 @@ public class ContactDao {
     @Autowired
     private ContactRepository contactRepository;
 
-    public Contact findByCode(String code) throws NotFoundException {
+    public Contact findByContactId(Long contactId) throws NotFoundException {
 
-        Contacts contacts = getEntityByCode(code);
+        Contacts contacts = getEntityById(contactId);
 
         Contact contact = new Contact();
-        contact.setCode(contacts.getCode());
+        contact.setContactId(contacts.getContactId());
+        contact.setFirstname(contacts.getFirstname());
+        contact.setLastname(contacts.getLastname());
+        contact.setAddress(contacts.getAddress());
+
         return contact;
     }
 
-    private Contacts getEntityByCode(String code) throws NotFoundException {
-        Contacts entity = contactRepository.findByCode(code);
+    private Contacts getEntityById(Long contactId) throws NotFoundException {
+        Contacts entity = contactRepository.findByContactId(contactId);
         if (entity == null) {
             throw new NotFoundException("Contact not found");
         }

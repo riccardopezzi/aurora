@@ -11,7 +11,7 @@ public class ContactService {
     @Autowired
     private ContactDao contactDao;
 
-    public Contact findByCode(String code) throws NotFoundException {
-        return contactDao.findByCode(code);
+    public Contact findByContactId(Long contactId) throws NotFoundException {
+        return contactDao.findByContactId(contactId);
     }
 }

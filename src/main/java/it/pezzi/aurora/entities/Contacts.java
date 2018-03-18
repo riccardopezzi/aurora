@@ -7,23 +7,68 @@ import javax.persistence.*;
         name = "contacts",
         catalog = "test",
         uniqueConstraints = {@UniqueConstraint(
-                columnNames = {"CODE"}
+                columnNames = { "CONTACTID", "FIRSTNAME", "LASTNAME", "ADDRESS" }
         )}
 )
 public class Contacts {
-    private String code;
+    private Long contactId;
 
     @Id
+    @GeneratedValue(strategy=GenerationType.TABLE)
     @Column(
-            name = "CODE",
-            nullable = false,
-            length = 32
+            name = "CONTACTID",
+            nullable = false
     )
-    public String getCode() {
-        return this.code;
+    public Long getContactId() {
+        return this.contactId;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setContactId(Long contactId) {
+        this.contactId = contactId;
+    }
+
+    private String firstname;
+
+    @Column(
+            name = "FIRSTNAME",
+            nullable = false,
+            length = 45
+    )
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    private String lastname;
+
+    @Column(
+            name = "LASTNAME",
+            nullable = false,
+            length = 45
+    )
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    private String address;
+
+    @Column(
+            name = "ADDRESS",
+            nullable = true,
+            length = 45
+    )
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
