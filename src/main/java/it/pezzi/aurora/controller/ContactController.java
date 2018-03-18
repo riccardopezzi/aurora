@@ -8,6 +8,8 @@ import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/contact")
 @Api(value = "Contact controller")
@@ -24,15 +26,7 @@ public class ContactController {
 
     @ApiOperation(value = "Insert a new contact")
     @RequestMapping(method = RequestMethod.POST)
-    public void insertContact(@RequestParam(value="firstname") String firstname,
-                                 @RequestParam(value="lastname") String lastname,
-                                 @RequestParam(value="address") String address)  {
-
-        Contact contact = new Contact();
-        contact.setFirstname(firstname);
-        contact.setLastname(lastname);
-        contact.setAddress(address);
-
+    public void insertContact(@Valid @RequestBody Contact contact)  {
         contactService.insertContact(contact);
     }
 
