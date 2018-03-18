@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 
 @Component
-public interface ContactRepository extends CrudRepository{
+public interface ContactRepository extends CrudRepository<Contacts, Long>{
     Contacts findByCode(String code);
 }

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class ContactDao {
 
     @Autowired
-    ContactRepository contactRepository;
+    private ContactRepository contactRepository;
 
     public Contact findByCode(String code) throws NotFoundException {
 
