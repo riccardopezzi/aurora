@@ -18,12 +18,7 @@ public class ContactController {
 
     @ApiOperation(value = "Search contact by code")
     @RequestMapping(method = RequestMethod.GET)
-    public Contact getContact(@RequestParam(value="code") String code) {
-        try {
+    public Contact getContact(@RequestParam(value="code") String code) throws NotFoundException {
             return contactService.findByCode(code);
-        } catch (NotFoundException e) {
-            /* e.printStackTrace(); */
-        }
-        return null;
     }
 }
