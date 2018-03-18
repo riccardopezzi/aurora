@@ -11,7 +11,20 @@ public class ContactService {
     @Autowired
     private ContactDao contactDao;
 
-    public Contact findByContactId(Long contactId) throws NotFoundException {
+    public Contact getContact(Long contactId) throws NotFoundException {
         return contactDao.findByContactId(contactId);
     }
+
+    public void insertContact(Contact contact) {
+        contactDao.insertContact(contact);
+    }
+
+    public void deleteContact(Long contactId) {
+        contactDao.deleteContact(contactId);
+    }
+
+    public void updateContact(Contact contact) {
+        contactDao.updateContact(contact);
+    }
+
 }

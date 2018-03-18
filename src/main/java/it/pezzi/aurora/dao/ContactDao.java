@@ -33,4 +33,34 @@ public class ContactDao {
         }
         return entity;
     }
+
+    public void insertContact(Contact contact){
+        Contacts contacts= new Contacts();
+        contacts.setFirstname(contact.getFirstname());
+        contacts.setLastname(contact.getLastname());
+        contacts.setAddress(contact.getAddress());
+
+        contactRepository.save(contacts);
+    }
+
+    public void deleteContact(Long contactId){
+        Contacts contacts = new Contacts();
+        contacts.setContactId(contactId);
+
+        contactRepository.delete(contacts);
+    }
+
+    public void updateContact(Contact contact) {
+
+        Contacts contacts= new Contacts();
+
+        contacts.setContactId(contact.getContactId());
+        contacts.setFirstname(contact.getFirstname());
+        contacts.setLastname(contact.getLastname());
+        contacts.setAddress(contact.getAddress());
+
+        contactRepository.save(contacts);
+    }
+
+
 }

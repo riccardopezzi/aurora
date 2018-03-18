@@ -14,7 +14,7 @@ public class Contacts {
     private Long contactId;
 
     @Id
-    @GeneratedValue(strategy=GenerationType.TABLE)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(
             name = "CONTACTID",
             nullable = false
@@ -61,7 +61,6 @@ public class Contacts {
 
     @Column(
             name = "ADDRESS",
-            nullable = true,
             length = 45
     )
     public String getAddress() {
