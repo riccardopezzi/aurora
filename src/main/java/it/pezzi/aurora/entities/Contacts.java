@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(
         name = "contacts",
-        catalog = "test_db",
+        catalog = "test",
         uniqueConstraints = {@UniqueConstraint(
                 columnNames = {"CODE"}
         )}
