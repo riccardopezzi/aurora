@@ -1,4 +1,4 @@
-Questa applicazione realizzata su base SpringBoot gestisce una CRUD di un contatto su db mysql tramite Api Rest.
+Questa applicazione realizzata su base SpringBoot / Maven gestisce una CRUD di un contatto su db mysql tramite Api Rest.
 
 Testata in locale con:
 - IntelliJ 2017.3
@@ -6,6 +6,7 @@ Testata in locale con:
 - Mysql Server 5.7
 
 Per poterla testare bisogna:
+- Importare le dipendenze definite nel pom.xml con maven
 - Avere un mysql server, inserire l'host/porta, user e password in resources/application.properties
 - Dentro la folder "ddl" trovate l'sql per creare il db e tabella.
 - Avviare l'applicazione (Application.main())
