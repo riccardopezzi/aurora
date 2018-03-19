@@ -6,6 +6,7 @@ import it.pezzi.aurora.domain.Contact;
 import it.pezzi.aurora.service.ContactService;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -26,6 +27,7 @@ public class ContactController {
 
     @ApiOperation(value = "Insert a new contact")
     @RequestMapping(method = RequestMethod.POST)
+    @ResponseStatus(value = HttpStatus.CREATED)
     public void insertContact(@Valid @RequestBody Contact contact)  {
         contactService.insertContact(contact);
     }
